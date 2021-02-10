@@ -76,5 +76,18 @@ namespace Calculator_NUnit_Test
             //Assert
             Assert.That(test, Is.EqualTo(16));
         }
+
+        [Test]
+        public void Thisisatest()
+        {
+            //Arrange
+            Assert.That(1, Is.EqualTo(1));
+
+            //Act
+
+
+            //Assert
+
+        }
     }
 }
