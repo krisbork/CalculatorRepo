@@ -25,6 +25,20 @@ namespace Calculator_NUnit_Test
         }
 
         [Test]
+        public void AddAndSubtract()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Add(4, 2);
+            test = uut.Subtract(test, 3);
+
+            //Assert
+            Assert.That(test,Is.EqualTo(3));
+        }
+
+        [Test]
         public void Subtract4From59Expects55()
         {
             //Arrange
