@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using Calc;
 
@@ -143,7 +144,7 @@ namespace Calculator_NUnit_Test
             test = uut.Power(3.4);
 
             //Assert
-            Assert.That(test, Is.EqualTo(-10.5560632862));
+            Assert.That(test, Is.NaN);
         }
 
         [Test]
