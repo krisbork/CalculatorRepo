@@ -143,6 +143,48 @@ namespace Calculator_NUnit_Test
         }
 
         [Test]
+        public void AccuPowerTest()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Power(2, 4);
+            test = uut.Power(2);
+
+            //Assert
+            Assert.That(test, Is.EqualTo(256));
+        }
+
+        [Test]
+        public void AccuPowerNegTest()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Power(2, 4);
+            test = uut.Power(-2);
+
+            //Assert
+            Assert.That(test, Is.EqualTo(0.00390625));
+        }
+
+        [Test]
+        public void AccuNegPowerTest()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Subtract(2, 4);
+            test = uut.Power(3.4);
+
+            //Assert
+            Assert.That(test, Is.EqualTo(-10.5560632862));
+        }
+
+        [Test]
         public void ClearTest()
         {
             //Arrange
