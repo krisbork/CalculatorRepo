@@ -246,10 +246,9 @@ namespace Calculator_NUnit_Test
 
             //Act
             double test = uut.Divide(4, 2);
-            test = uut.Divide(0);
 
             //Assert
-            //Assert.That(test, Is.Not.);
+            Assert.Catch<DivideByZeroException>(() => uut.Divide(0));
         }
 
         [Test]
