@@ -130,6 +130,32 @@ namespace Calculator_NUnit_Test
         }
 
         [Test]
+        public void MultiplyNegWithPos_ExpectsNeg()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Multiply(-9, 3);
+
+            //Assert
+            Assert.That(test, Is.EqualTo(-27));
+        }
+
+        [Test]
+        public void MultiplyNonIntWithInt_ExpectsNonInt()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Multiply(9.5, 3);
+
+            //Assert
+            Assert.That(test, Is.EqualTo(28.5));
+        }
+
+        [Test]
         public void TwoPowerOf4Expects16()
         {
             //Arrange
@@ -141,6 +167,47 @@ namespace Calculator_NUnit_Test
             //Assert
             Assert.That(test, Is.EqualTo(16));
         }
+
+        [Test]
+        public void PosxWithNegExp_Expects()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Power(9, -2);
+
+            //Assert
+            Assert.That(test, Is.EqualTo(0.012345679012345678));
+        }
+
+        [Test]
+        public void PosNonInt_With_PosIntExp_ExpectsNonInt()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Power(3.5, 3);
+
+            //Assert
+            Assert.That(test, Is.EqualTo(42.875));
+        }
+
+        [Test]
+        public void NegNonIntWithNonIntExp_ExpectsNaN()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Power(-3.5, 3.5);
+
+            //Assert
+            Assert.That(test, Is.NaN);
+        }
+
+
 
         [Test]
         public void AccuPowerTest()
