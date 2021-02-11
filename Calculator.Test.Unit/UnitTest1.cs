@@ -12,7 +12,7 @@ namespace Calculator_NUnit_Test
         }
 
         [Test]
-        public void Add4and2Gives6()
+        public void Add4And2Gives6()
         {
             //Arrange
             var uut = new Calculator();
@@ -25,7 +25,7 @@ namespace Calculator_NUnit_Test
         }
 
         [Test]
-        public void AddPosAndNonInt_Expect2()
+        public void AddIntAndNonInt_ExpectNonInt()
         {
             //Arrange
             var uut = new Calculator();
@@ -38,7 +38,7 @@ namespace Calculator_NUnit_Test
         }
 
         [Test]
-        public void AddNegAndNeg_ExpectNeg6()
+        public void AddNegAndNeg_ExpectNeg()
         {
             //Arrange
             var uut = new Calculator();
@@ -49,7 +49,6 @@ namespace Calculator_NUnit_Test
             //Assert
             Assert.That(test, Is.EqualTo(-6.5));
         }
-
 
         [Test]
         public void AddAndSubtract()
@@ -76,6 +75,45 @@ namespace Calculator_NUnit_Test
 
             //Assert
             Assert.That(test, Is.EqualTo(55));
+        }
+
+        [Test]
+        public void SubtractNonIntAndInt_ExpectsNonInt()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Subtract(59, 4.5);
+
+            //Assert
+            Assert.That(test, Is.EqualTo(54.5));
+        }
+
+        [Test]
+        public void SubtractPosAndNeg_ExpectsNumbersAdded()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Subtract(10,-10 );
+
+            //Assert
+            Assert.That(test, Is.EqualTo(20));
+        }
+
+        [Test]
+        public void SubtractNeg10AndNeg10_ExpectsZero()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Subtract(-10, -10);
+
+            //Assert
+            Assert.That(test, Is.EqualTo(0));
         }
 
         [Test]
