@@ -70,7 +70,8 @@ namespace Calc
     {
         public double Add(double a, double b)
         {
-            return a + b;
+            Accumulator = a + b;
+            return Accumulator;
         }
 
         public double Subtract(double a, double b)
@@ -87,5 +88,7 @@ namespace Calc
         {
             return Math.Pow(x, exp);
         }
+
+        public double Accumulator { get; private set; }
     }
 }
