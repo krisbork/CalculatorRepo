@@ -106,18 +106,6 @@ namespace Calc
             return Accumulator;
         }
 
-        public double Subtract(double subtractor)
-        {
-            Accumulator -= subtractor;
-            return Accumulator;
-        }
-
-        public double Multiply(double multiplier)
-        {
-            Accumulator *= multiplier;
-            return Accumulator;
-        }
-
         public double Divide(double divisor)
         {
             if (divisor == 0)
