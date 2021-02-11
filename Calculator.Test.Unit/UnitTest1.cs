@@ -25,6 +25,33 @@ namespace Calculator_NUnit_Test
         }
 
         [Test]
+        public void AddPosAndNonInt_Expect2()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Add(4, 2.5);
+
+            //Assert
+            Assert.That(test, Is.EqualTo(6.5));
+        }
+
+        [Test]
+        public void AddNegAndNeg_ExpectNeg6()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Add(-4.5, -2);
+
+            //Assert
+            Assert.That(test, Is.EqualTo(-6.5));
+        }
+
+
+        [Test]
         public void AddAndSubtract()
         {
             //Arrange
