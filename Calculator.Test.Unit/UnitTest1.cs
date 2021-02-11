@@ -105,16 +105,19 @@ namespace Calculator_NUnit_Test
         }
 
         [Test]
-        public void Thisisatest()
+        public void ClearTest()
         {
             //Arrange
-            Assert.That(1, Is.EqualTo(1));
+            var uut = new Calculator();
 
             //Act
-
+            double test = uut.Multiply(2, 4);
+            test = uut.Add(4);
+            uut.Clear();
+            test = uut.Add(2);
 
             //Assert
-
+            Assert.That(test, Is.EqualTo(2));
         }
     }
 }
