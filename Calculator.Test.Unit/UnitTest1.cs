@@ -144,6 +144,48 @@ namespace Calculator_NUnit_Test
         }
 
         [Test]
+        public void AccuDivideTest()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Divide(2, 4);
+            test = uut.Divide(5);
+
+            //Assert
+            Assert.That(test, Is.EqualTo(0.1));
+        }
+
+        [Test]
+        public void AccuDivideWithNeg()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Divide(5, 2);
+            test = uut.Divide(-5);
+
+            //Assert
+            Assert.That(test, Is.EqualTo(-0.5));
+        }
+
+        [Test]
+        public void AccuDivideWithZero()
+        {
+            //Arrange
+            var uut = new Calculator();
+
+            //Act
+            double test = uut.Divide(4, 2);
+            test = uut.Divide(0);
+
+            //Assert
+            //Assert.That(test, Is.Not.);
+        }
+
+        [Test]
         public void AccuPowerTest()
         {
             //Arrange
